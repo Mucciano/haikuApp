@@ -9,7 +9,7 @@ var path = require('path');
 var app = express();
 
 
-mongoose.connect('mongodb://localhost/haiku_app');
+mongoose.connect(process.env.MONGOLAB_URI || 'mongodb://localhost/haiku_app');
 
 app.use(logger('dev'));
 app.use(bodyParser.json());
