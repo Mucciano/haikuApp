@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html ng-app="Haiku-App">
+  <head>
+    <meta charset="utf-8">
+    <title>Haiku Keeper</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.css" media="screen" title="no title" charset="utf-8">
+    <link rel="stylesheet" href="/client/stylesheets/styles.css" media="screen" title="no title" charset="utf-8">
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.9/angular.min.js"></script>
+    <script src="/client/javascripts/angular_app.js" charset="utf-8"></script>
+    <script src="/client/javascripts/controllers/main.js" charset="utf-8"></script>
+    <script src="/client/javascripts/services/haiku_api.js" charset="utf-8"></script>
+  </head>
+  <body ng-controller="MainController">
+
+    <h1>Haiku Keeper</h1>
+    <div class="writepoem">
+      <input type="text" name="name" placeholder="line 1.." ng-model="line1">
+      <br>
+      <input type="text" name="name" placeholder="line 2.." ng-model="line2">
+      <br>
+      <input type="text" name="name" placeholder="line 3.." ng-model="line3">
+      <br>
+      <button type="button" name="button" ng-click="saveHaiku()">Save</button>
+    </div>
+
+
+    <div class="poems" ng-repeat="haiku in haikus">
+      <p>{{haiku.line1}}</p>
+      <p>{{haiku.line2}}</p>
+      <p>{{haiku.line3}}</p>
+      <button type="button" name="button" ng-click="deleteHaiku(haiku)">Impermanance</button>
+    </div>
+
+  </body>
+</html>
